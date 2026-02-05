@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Supabase QRチャット</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <meta charset="UTF-8">
+  <title>QRチャット</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="auth" class="box">
 <h2>登録 / ログイン</h2>
+
 <input id="username" placeholder="ユーザー名">
 <input id="password" type="password" placeholder="パスワード">
-<input id="password2" type="password" placeholder="確認用">
 <button onclick="register()">会員登録</button>
 <button onclick="login()">ログイン</button>
+
+<hr>
+
+<div id="chatArea" style="display:none;">
+  <h2>個人チャット</h2>
+  <div id="chatBox"></div>
+
+  <textarea id="messageInput" placeholder="メッセージ"></textarea>
+  <button onclick="sendMessage()">送信</button>
 </div>
 
-<div id="qrScreen" class="box hidden">
-<h3>あなたのQR</h3>
-<div id="qr"></div>
-<div id="reader"></div>
-<div id="requestBox"></div>
-<button onclick="logout()">ログアウト</button>
-</div>
-
-<div id="chatScreen" class="box hidden">
-<h3 id="chatWith"></h3>
-<div id="chatBox"></div>
-<div class="input-area">
-<textarea id="messageInput"></textarea>
-<button onclick="sendMessage()">送信</button>
-</div>
-</div>
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
